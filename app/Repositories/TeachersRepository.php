@@ -22,7 +22,9 @@ class TeachersRepository implements TeachersRepositoryInterface{
     }
     public function addStudent($teacherId, $studentId,$is_curator=0)
     {
-        return Teachers::whereId($teacherId)->get()[0]->students()->attach($teacherId,['is_curator'=>$is_curator]);
+        Teachers::findOrFail($teacherId)->students()->detach($studentId);
+        Teachers::findOrFail($teacherId)->students()->attach($studentId,['is_curator'=>$is_curator]);
+        return "Student was successfully added!";
     }
     public function removeStudent($teacherId, $studentId)
     {

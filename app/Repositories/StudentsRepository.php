@@ -23,11 +23,13 @@ class StudentsRepository implements StudentsRepositoryInterface{
     }
     public function removeTeacher($studentId,$teacherId)
     {
-        return Students::findOrFail($studentId)->teachers()->detach($teacherId);
+        Students::findOrFail($studentId)->teachers()->detach($teacherId);
+        return "Teacher was successfully removed";
     }
-    public function addTeacher($studentId,$teacherId,$is_curator)
-    {
-        return Students::findOrFail($studentId)->teachers()->attach($teacherId,['is_curator'=>$is_curator]);
+    public function addTeacher($studentId,$teacherId,$is_curator=0)
+    {   Students::findOrFail($studentId)->teachers()->detach($teacherId);
+        Students::findOrFail($studentId)->teachers()->attach($teacherId,['is_curator'=>$is_curator]);
+        return "Teacher was successfully added";
     }
     public function getCurator($studentId)
     {
