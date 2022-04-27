@@ -1,0 +1,670 @@
+{
+	"info": {
+		"_postman_id": "f7a08718-d61b-406f-9dab-944bda4f5768",
+		"name": "TestWork84933",
+		"description": "Postman collection for test task in Mello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Get All Students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"host": true,
+							"user-agent": true,
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_token",
+								"value": "U7lzSfR8mFlCdOLkqH2L2RJfIHUYgwh62D8Ac7ZinXtGUOBRl0hvJpRDdTYz",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/students?api_token=JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/students/5?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"5"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Get student by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/students/20?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"20"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Delete Student object"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/students/add/teacher?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&teacher_id=3&student_id=200&is_curator=1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"add",
+								"teacher"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "teacher_id",
+									"value": "3"
+								},
+								{
+									"key": "student_id",
+									"value": "200"
+								},
+								{
+									"key": "is_curator",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Add Teacher to student's list"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Teacher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/students/delete/teacher?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&teacher_id=3&student_id=200",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"delete",
+								"teacher"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "teacher_id",
+									"value": "3"
+								},
+								{
+									"key": "student_id",
+									"value": "200"
+								}
+							]
+						},
+						"description": "Remove Teacher from student's list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get curator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/students/80/curator?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"80",
+								"curator"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Get teacher, who is curator for current student"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/students?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&name=Rasmus Lendorf&points=90",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "name",
+									"value": "Rasmus Lendorf"
+								},
+								{
+									"key": "points",
+									"value": "90"
+								}
+							]
+						},
+						"description": "Create new student object"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/students/30?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&name=Winston Churchill&points=99",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"students",
+								"30"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "name",
+									"value": "Winston Churchill"
+								},
+								{
+									"key": "points",
+									"value": "99"
+								}
+							]
+						},
+						"description": "Update Student model"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teachers",
+			"item": [
+				{
+					"name": "Get All Teachers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"host": true,
+							"user-agent": true,
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_token",
+								"value": "U7lzSfR8mFlCdOLkqH2L2RJfIHUYgwh62D8Ac7ZinXtGUOBRl0hvJpRDdTYz",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/teachers?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "John Johnson",
+									"disabled": true
+								},
+								{
+									"key": "points",
+									"value": "57",
+									"disabled": true
+								},
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single Teacher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/teachers/5?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"5"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Get student by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/teachers/20?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"20"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Delete Student object"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/teachers/add/student?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&teacher_id=3&student_id=200&is_curator=false",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"add",
+								"student"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "teacher_id",
+									"value": "3"
+								},
+								{
+									"key": "student_id",
+									"value": "200"
+								},
+								{
+									"key": "is_curator",
+									"value": "false"
+								}
+							]
+						},
+						"description": "Add Teacher to student's list"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/teachers/delete/student?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3&teacher_id=3&student_id=200",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"delete",
+								"student"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								},
+								{
+									"key": "teacher_id",
+									"value": "3"
+								},
+								{
+									"key": "student_id",
+									"value": "200"
+								}
+							]
+						},
+						"description": "Remove Teacher from student's list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/teachers/10/group?api_token=LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"10",
+								"group"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "LwLiIDwlA6GG9NraDAxWF7MvW73g2i9dRfDRO3SLK5Hp8J8BElRV7yYlywh3"
+								}
+							]
+						},
+						"description": "Get teacher, who is curator for current student"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/teachers?api_token=JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2&name=Matt Zandstra&rating=90&start_of_work=2022-04-27&subject=Patterns and methods",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2"
+								},
+								{
+									"key": "name",
+									"value": "Matt Zandstra"
+								},
+								{
+									"key": "rating",
+									"value": "90"
+								},
+								{
+									"key": "start_of_work",
+									"value": "2022-04-27"
+								},
+								{
+									"key": "subject",
+									"value": "Patterns and methods"
+								}
+							]
+						},
+						"description": "Create new student object"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Teacher",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/teachers/20?api_token=JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2&name=Elon Mask&rating=99&start_of_work=1997-07-26&subject=Innovations",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"teachers",
+								"20"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "JHjH0VtdRMtvFHmBda3g6vEQvDjmoqD45anR17uJePrFDQXOYgABU3UUr7x2"
+								},
+								{
+									"key": "name",
+									"value": "Elon Mask"
+								},
+								{
+									"key": "rating",
+									"value": "99"
+								},
+								{
+									"key": "start_of_work",
+									"value": "1997-07-26"
+								},
+								{
+									"key": "subject",
+									"value": "Innovations"
+								}
+							]
+						},
+						"description": "Update Student model"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

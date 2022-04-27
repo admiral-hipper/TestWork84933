@@ -18,7 +18,7 @@ class CreateTeachersTable extends Migration
             $table->string('name');
             $table->string('subject');
             $table->integer('rating');
-            $table->timestamp('start_of_work');
+            $table->date('start_of_work');
             $table->timestamps();
         });
     }
