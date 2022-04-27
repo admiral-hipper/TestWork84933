@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api'=>[
+            'driver'=>'token',
+            'provider'=>'api_tokens',
+            'hash'=>true
+        ]
     ],
 
     /*
@@ -64,6 +69,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'api_tokens'=>[
+            'driver'=>'database',
+            'table'=>'api_tokens'
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

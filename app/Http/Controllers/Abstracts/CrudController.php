@@ -36,26 +36,8 @@ class CrudController extends Controller
         
     // }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreorderRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request):JsonResponse
-    {
-        $orderDetails = $request->only([
-            'name',
-            'rating'
-        ]);
-
-        return response()->json(
-            [
-                'data' => $this->orderRepository->createOrder($orderDetails)
-            ],
-            Response::HTTP_CREATED
-        );
-    }
+   
+   
 
     /**
      * Display the specified resource.
@@ -72,36 +54,7 @@ class CrudController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\order  $order
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit(order $order):JsonResponse
-    // {
-        
-    // }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateorderRequest  $request
-     * @param  \App\Models\order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request): JsonResponse 
-    {
-        $orderId = $request->route('id');
-        $orderDetails = $request->only([
-            'client',
-            'details'
-        ]);
-
-        return response()->json([
-            'data' => $this->orderRepository->updateOrder($orderId, $orderDetails)
-        ]);
-    }
+   
 
     /**
      * Remove the specified resource from storage.

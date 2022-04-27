@@ -18,28 +18,28 @@ use App\Http\Controllers\TeachersController;
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::prefix('teachers')->group(function(){
-    Route::get('/', [TeachersController::class, 'index']);
-    Route::get('/group',[TeachersController::class,'getGroup']);
-    Route::get('/{id}', [TeachersController::class, 'show']);
-    Route::post('/', [TeachersController::class, 'store']);
-    Route::put('/{id}', [TeachersController::class, 'update']);
-    Route::delete('/{id}', [TeachersController::class, 'delete']);
-    Route::post('/add/student',[TeachersController::class,'addStudent']);
-    Route::post('/delete/student',[TeachersController::class,'removeStudent']);
+
+Route::middleware('auth:api')->group(function(){
+    Route::prefix('teachers')->group(function(){
+        Route::get('/', [TeachersController::class, 'index']);
+        Route::get('{id}/group',[TeachersController::class,'getGroup']);
+        Route::delete('/{id}', [TeachersController::class, 'destroy']);
+        Route::get('/{id}', [TeachersController::class, 'show']);
+        Route::post('/', [TeachersController::class, 'store']);
+        Route::put('/{id}', [TeachersController::class, 'update']);
+        Route::post('/add/student',[TeachersController::class,'addStudent']);
+        Route::post('/delete/student',[TeachersController::class,'removeStudent']);
+    });
+    Route::prefix('students')->group(function(){
+        Route::get('/', [StudentsController::class, 'index']);
+        Route::get('/{id}', [StudentsController::class, 'show']);
+        Route::post('/', [StudentsController::class, 'store']);
+        Route::put('/{id}', [StudentsController::class, 'update']);
+        Route::delete('/{id}', [StudentsController::class, 'destroy']);
+        Route::get('/{id}/curator',[StudentsController::class,'getCurator']);
+        Route::delete('/delete/teacher',[StudentsController::class,'deleteTeacher']);
+        Route::post('/add/teacher',[StudentsController::class,'addTeacher']);
+    });
 });
 
-
-
-Route::prefix('students')->group(function(){
-    Route::get('/', [StudentsController::class, 'index']);
-    Route::get('curator',[StudentsController::class,'getCurator']);
-    Route::get('/{id}', [StudentsController::class, 'show']);
-    Route::post('/', [StudentsController::class, 'store']);
-    Route::put('/{id}', [StudentsController::class, 'update']);
-    Route::delete('/{id}', [StudentsController::class, 'delete']);
-    Route::post('/curator}',[StudentsController::class,'getCurator']);
-    Route::post('/delete/teacher',[StudentsController::class,'deleteTeacher']);
-    Route::post('/add/teacher',[StudentsController::class,'addTeacher']);
-});
 

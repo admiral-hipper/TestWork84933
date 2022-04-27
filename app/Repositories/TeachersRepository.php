@@ -30,7 +30,7 @@ class TeachersRepository implements TeachersRepositoryInterface{
     }
     public function getStudentsGroup($teacherId)
     {
-        return Teachers::whereId($teacherId)->get()[0]->students()->where('is_cuator','=',true)->get();
+        return Teachers::whereId($teacherId)->get()[0]->students()->where('is_curator','=',true)->get();
     }
 }
 ?>
